@@ -1,0 +1,32 @@
+{
+  "name": "novella",
+  "version": "1.0.0",
+  "description": "Real-time collaborative story writing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tabakd/novella.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tabakd/novella/issues"
+  },
+  "homepage": "https://github.com/tabakd/novella#readme",
+  "dependencies": {
+    "babelify": "^6.1.2",
+    "express": "^4.12.4",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "gulp-babel": "^5.1.0",
+    "gulp-less": "^3.0.3",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
