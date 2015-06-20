@@ -2,7 +2,8 @@ var gulp = require('gulp');
 var babelify = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream')
-var less = require('gulp-less');
+var serve = require('gulp-serve');
+var livereload = require('gulp-livereload');
 
 var src_dir = {
 	client: 'client', 
@@ -14,13 +15,8 @@ gulp.task('js', function () {
 		.transform(babelify)
 		.bundle()
 		.pipe(source('app.js'))
-		.pipe(gulp.dest('dist/js'));
-});
-
-gulp.task('less', function () {
-	return gulp.src(src_dir.client + '/less/main.less')
-		.pipe(less())
-		.pipe(gulp.dest('dist/less'));
+		.pipe(gulp.dest('dist/js'))
+		.pipe(livereload());;
 });
 
 gulp.task('html', function () {
@@ -28,4 +24,11 @@ gulp.task('html', function () {
 		.pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['js', 'less', 'html']);
+gulp.task('serve', serve('dist'));
+
+gulp.task('watch', function() {
+  livereload.listen();
+  gulp.watch('/js/**/*.js', ['js']);
+});
+
+gulp.task('default', ['js', 'html', 'serve', 'watch']);
