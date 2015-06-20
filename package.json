@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tabakd/novella#readme",
   "dependencies": {
+    "alt": "^0.16.10",
     "express": "^4.12.4",
     "gulp-livereload": "^3.8.0",
     "radium": "^0.13.0",

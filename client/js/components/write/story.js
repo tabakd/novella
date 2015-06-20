@@ -2,12 +2,9 @@ import React from 'react';
 import Radium from 'radium';
 
 export default React.createClass ({  
-  getInitialState() {
-    return {}
-  },
   render() {
     return <div>
-      [This is the Story]
+      {this.props.story.map(s => <span>{s}</span>)}
     </div>
   }
 })
