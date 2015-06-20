@@ -1,8 +1,11 @@
 import React from 'react';
+import {RouteHandler} from 'react-router';
+
+import Header from './header';
 
 export default React.createClass ({  
   getInitialState() {
-    return { num: this.getRandomNumber() }
+    return {}
   },
 
   getRandomNumber() {
@@ -11,8 +14,8 @@ export default React.createClass ({
 
   render() {
     return <div>
-      Your dice rolls!:
-      {this.state.num}
+      <Header />
+      <RouteHandler />
     </div>
   }
 })
