@@ -166,7 +166,7 @@ exports['default'] = _react2['default'].createClass({
       null,
       _react2['default'].createElement(_story2['default'], { story: this.state.story }),
       _react2['default'].createElement(_submit2['default'], null),
-      _react2['default'].createElement(_vote2['default'], null)
+      _react2['default'].createElement(_vote2['default'], { submissions: this.state.submissions })
     );
   }
 });
@@ -367,7 +367,8 @@ var NovellaStore = (function () {
   function NovellaStore() {
     _classCallCheck(this, NovellaStore);
 
-    this.story = ['Hek'];
+    this.story = [];
+    this.submissions = [];
 
     this.bindListeners({
       handleSubmitSentence: _actionsNovella2['default'].SUBMIT_SENTENCE
@@ -377,7 +378,18 @@ var NovellaStore = (function () {
   _createClass(NovellaStore, [{
     key: 'handleSubmitSentence',
     value: function handleSubmitSentence(sentence) {
-      this.story = this.story.concat(sentence);
+      this.submissions = this.submissions.concat({
+        sentence: sentence,
+        score: 0
+      });
+    }
+  }, {
+    key: 'handleSubmitSentence',
+    value: function handleSubmitSentence(sentence) {
+      this.submissions = this.submissions.concat({
+        sentence: sentence,
+        score: 0
+      });
     }
   }]);
 

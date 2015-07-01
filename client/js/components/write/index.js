@@ -26,7 +26,7 @@ export default React.createClass ({
     return <div>
       <Story story={this.state.story}/>
       <Submit />
-      <Vote />
+      <Vote submissions={this.state.submissions} />
     </div>
   }
 })
